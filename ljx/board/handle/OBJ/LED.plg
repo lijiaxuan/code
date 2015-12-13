@@ -1,0 +1,621 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\handle\USER\LED.uvproj
+Project File Date:  11/24/2015
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+code\control\main.c(7): error:  #5: cannot open source input file "control/handle_control/inc/handle_control_global_variable.h": No such file or directory
+compiling handle.c...
+code\module\handle\src\../inc/handle_struct.h(33): warning:  #1-D: last line of file ends without a newline
+code\module\handle\src\../inc/handle.h(12): error:  #5: cannot open source input file "driver/pwm/inc/pwm.h": No such file or directory
+compiling delay.c...
+code\driver\delay\src\delay.c(2): error:  #5: cannot open source input file "sys.h": No such file or directory
+compiling system_stm32f10x.c...
+compiling stm32f10x_it.c...
+assembling startup_stm32f10x_hd.s...
+"..\OBJ\LED.axf" - 3 Errors, 1 Warning(s).
+Target not created
+Build target 'Target 1'
+compiling main.c...
+E:\handle\USER\code\module/handle/inc/handle_struct.h(33): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\module/handle/inc/handle.h(17): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\control/handle_control/inc/handle_control.h(14): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\control/handle_control/inc/handle_control_global_variable.h(14): warning:  #1-D: last line of file ends without a newline
+code\control\main.c(17): warning:  #111-D: statement is unreachable
+code\control\main.c(18): warning:  #1-D: last line of file ends without a newline
+compiling handle_control.c...
+E:\handle\USER\code\module/handle/inc/handle_struct.h(33): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\module/handle/inc/handle.h(17): warning:  #1-D: last line of file ends without a newline
+code\control\handle_control\src\../inc/handle_control.h(14): warning:  #1-D: last line of file ends without a newline
+code\control\handle_control\src\handle_control.c(61): warning:  #223-D: function "delay_ms" declared implicitly
+code\control\handle_control\src\handle_control.c(65): warning:  #223-D: function "delay_ms" declared implicitly
+code\control\handle_control\src\handle_control.c(83): warning:  #1-D: last line of file ends without a newline
+compiling handle_control_global_variable.c...
+E:\handle\USER\code\module/handle/inc/handle_struct.h(33): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\module/handle/inc/handle.h(17): warning:  #1-D: last line of file ends without a newline
+code\control\handle_control\src\../inc/handle_control.h(14): warning:  #1-D: last line of file ends without a newline
+code\control\handle_control\src\../inc/handle_control_global_variable.h(14): warning:  #1-D: last line of file ends without a newline
+code\control\handle_control\src\handle_control_global_variable.c(16): warning:  #1-D: last line of file ends without a newline
+compiling handle.c...
+code\module\handle\src\../inc/handle_struct.h(33): warning:  #1-D: last line of file ends without a newline
+code\module\handle\src\../inc/handle.h(17): warning:  #1-D: last line of file ends without a newline
+code\module\handle\src\handle.c(16): warning:  #1-D: last line of file ends without a newline
+compiling handle_global_variable.c...
+code\module\handle\src\../inc/handle_struct.h(33): warning:  #1-D: last line of file ends without a newline
+code\module\handle\src\../inc/handle.h(17): warning:  #1-D: last line of file ends without a newline
+code\module\handle\src\handle_global_variable.c(16): warning:  #144-D: a value of type "void (*)(u32)" cannot be used to initialize an entity of type "void (*)(int)"
+code\module\handle\src\handle_global_variable.c(18): warning:  #1-D: last line of file ends without a newline
+compiling delay.c...
+code\driver\delay\src\delay.c(2): error:  #5: cannot open source input file "sys.h": No such file or directory
+compiling pwm.c...
+compiling usart.c...
+E:\handle\USER\code\module/handle/inc/handle_struct.h(33): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\module/handle/inc/handle.h(17): warning:  #1-D: last line of file ends without a newline
+code\driver\usart\src\usart.c(51): warning:  #940-D: missing return statement at end of non-void function "_sys_exit"
+code\driver\usart\src\usart.c(287): warning:  #1-D: last line of file ends without a newline
+compiling system_stm32f10x.c...
+compiling stm32f10x_it.c...
+"..\OBJ\LED.axf" - 1 Errors, 28 Warning(s).
+Target not created
+Build target 'Target 1'
+compiling main.c...
+E:\handle\USER\code\module/handle/inc/handle_struct.h(33): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\module/handle/inc/handle.h(17): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\control/handle_control/inc/handle_control.h(14): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\control/handle_control/inc/handle_control_global_variable.h(14): warning:  #1-D: last line of file ends without a newline
+code\control\main.c(17): warning:  #111-D: statement is unreachable
+code\control\main.c(18): warning:  #1-D: last line of file ends without a newline
+compiling handle.c...
+code\module\handle\src\../inc/handle_struct.h(33): warning:  #1-D: last line of file ends without a newline
+code\module\handle\src\../inc/handle.h(17): warning:  #1-D: last line of file ends without a newline
+code\module\handle\src\handle.c(16): warning:  #1-D: last line of file ends without a newline
+compiling delay.c...
+linking...
+..\OBJ\LED.axf: Error: L6200E: Symbol handle multiply defined (by handle_control.o and main.o).
+..\OBJ\LED.axf: Error: L6200E: Symbol handle multiply defined (by handle_control_global_variable.o and main.o).
+..\OBJ\LED.axf: Error: L6200E: Symbol handle multiply defined (by handle_global_variable.o and main.o).
+..\OBJ\LED.axf: Error: L6200E: Symbol handle multiply defined (by usart.o and main.o).
+"..\OBJ\LED.axf" - 4 Errors, 9 Warning(s).
+Target not created
+Build target 'Target 1'
+compiling main.c...
+E:\handle\USER\code\module/handle/inc/handle_struct.h(33): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\module/handle/inc/handle.h(17): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\control/handle_control/inc/handle_control.h(14): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\control/handle_control/inc/handle_control_global_variable.h(14): warning:  #1-D: last line of file ends without a newline
+code\control\main.c(17): warning:  #111-D: statement is unreachable
+code\control\main.c(18): warning:  #1-D: last line of file ends without a newline
+compiling handle_control.c...
+E:\handle\USER\code\module/handle/inc/handle_struct.h(33): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\module/handle/inc/handle.h(17): warning:  #1-D: last line of file ends without a newline
+code\control\handle_control\src\../inc/handle_control.h(14): warning:  #1-D: last line of file ends without a newline
+code\control\handle_control\src\handle_control.c(61): warning:  #223-D: function "delay_ms" declared implicitly
+code\control\handle_control\src\handle_control.c(65): warning:  #223-D: function "delay_ms" declared implicitly
+code\control\handle_control\src\handle_control.c(83): warning:  #1-D: last line of file ends without a newline
+compiling handle_control_global_variable.c...
+E:\handle\USER\code\module/handle/inc/handle_struct.h(33): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\module/handle/inc/handle.h(17): warning:  #1-D: last line of file ends without a newline
+code\control\handle_control\src\../inc/handle_control.h(14): warning:  #1-D: last line of file ends without a newline
+code\control\handle_control\src\../inc/handle_control_global_variable.h(14): warning:  #1-D: last line of file ends without a newline
+code\control\handle_control\src\handle_control_global_variable.c(16): warning:  #1-D: last line of file ends without a newline
+compiling handle_global_variable.c...
+code\module\handle\src\../inc/handle_struct.h(33): warning:  #1-D: last line of file ends without a newline
+code\module\handle\src\../inc/handle.h(17): warning:  #1-D: last line of file ends without a newline
+code\module\handle\src\handle_global_variable.c(16): warning:  #144-D: a value of type "void (*)(u32)" cannot be used to initialize an entity of type "void (*)(int)"
+code\module\handle\src\handle_global_variable.c(18): warning:  #1-D: last line of file ends without a newline
+compiling delay.c...
+compiling usart.c...
+E:\handle\USER\code\module/handle/inc/handle_struct.h(33): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\module/handle/inc/handle.h(17): warning:  #1-D: last line of file ends without a newline
+code\driver\usart\src\usart.c(51): warning:  #940-D: missing return statement at end of non-void function "_sys_exit"
+code\driver\usart\src\usart.c(287): warning:  #1-D: last line of file ends without a newline
+linking...
+..\OBJ\LED.axf: Error: L6218E: Undefined symbol SysTick_CLKSourceConfig (referred from delay.o).
+..\OBJ\LED.axf: Error: L6218E: Undefined symbol GPIO_Init (referred from pwm.o).
+..\OBJ\LED.axf: Error: L6218E: Undefined symbol RCC_APB1PeriphClockCmd (referred from pwm.o).
+..\OBJ\LED.axf: Error: L6218E: Undefined symbol RCC_APB2PeriphClockCmd (referred from pwm.o).
+..\OBJ\LED.axf: Error: L6218E: Undefined symbol TIM_ARRPreloadConfig (referred from pwm.o).
+..\OBJ\LED.axf: Error: L6218E: Undefined symbol TIM_Cmd (referred from pwm.o).
+..\OBJ\LED.axf: Error: L6218E: Undefined symbol TIM_OC3Init (referred from pwm.o).
+..\OBJ\LED.axf: Error: L6218E: Undefined symbol TIM_OC3PreloadConfig (referred from pwm.o).
+..\OBJ\LED.axf: Error: L6218E: Undefined symbol TIM_OC4Init (referred from pwm.o).
+..\OBJ\LED.axf: Error: L6218E: Undefined symbol TIM_OC4PreloadConfig (referred from pwm.o).
+..\OBJ\LED.axf: Error: L6218E: Undefined symbol TIM_TimeBaseInit (referred from pwm.o).
+..\OBJ\LED.axf: Error: L6218E: Undefined symbol NVIC_Init (referred from usart.o).
+..\OBJ\LED.axf: Error: L6218E: Undefined symbol USART_ClearFlag (referred from usart.o).
+..\OBJ\LED.axf: Error: L6218E: Undefined symbol USART_ClearITPendingBit (referred from usart.o).
+..\OBJ\LED.axf: Error: L6218E: Undefined symbol USART_Cmd (referred from usart.o).
+..\OBJ\LED.axf: Error: L6218E: Undefined symbol USART_DeInit (referred from usart.o).
+..\OBJ\LED.axf: Error: L6218E: Undefined symbol USART_ITConfig (referred from usart.o).
+..\OBJ\LED.axf: Error: L6218E: Undefined symbol USART_Init (referred from usart.o).
+..\OBJ\LED.axf: Error: L6218E: Undefined symbol USART_ReceiveData (referred from usart.o).
+"..\OBJ\LED.axf" - 19 Errors, 25 Warning(s).
+Target not created
+Build target 'Target 1'
+compiling main.c...
+E:\handle\USER\code\module/handle/inc/handle_struct.h(33): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\module/handle/inc/handle.h(17): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\control/handle_control/inc/handle_control.h(14): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\control/handle_control/inc/handle_control_global_variable.h(14): warning:  #1-D: last line of file ends without a newline
+code\control\main.c(17): warning:  #111-D: statement is unreachable
+code\control\main.c(18): warning:  #1-D: last line of file ends without a newline
+compiling handle_control.c...
+E:\handle\USER\code\module/handle/inc/handle_struct.h(33): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\module/handle/inc/handle.h(17): warning:  #1-D: last line of file ends without a newline
+code\control\handle_control\src\../inc/handle_control.h(14): warning:  #1-D: last line of file ends without a newline
+code\control\handle_control\src\handle_control.c(61): warning:  #223-D: function "delay_ms" declared implicitly
+code\control\handle_control\src\handle_control.c(65): warning:  #223-D: function "delay_ms" declared implicitly
+code\control\handle_control\src\handle_control.c(83): warning:  #1-D: last line of file ends without a newline
+compiling handle_control_global_variable.c...
+E:\handle\USER\code\module/handle/inc/handle_struct.h(33): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\module/handle/inc/handle.h(17): warning:  #1-D: last line of file ends without a newline
+code\control\handle_control\src\../inc/handle_control.h(14): warning:  #1-D: last line of file ends without a newline
+code\control\handle_control\src\../inc/handle_control_global_variable.h(14): warning:  #1-D: last line of file ends without a newline
+code\control\handle_control\src\handle_control_global_variable.c(16): warning:  #1-D: last line of file ends without a newline
+compiling handle_global_variable.c...
+code\module\handle\src\../inc/handle_struct.h(33): warning:  #1-D: last line of file ends without a newline
+code\module\handle\src\../inc/handle.h(17): warning:  #1-D: last line of file ends without a newline
+code\module\handle\src\handle_global_variable.c(16): warning:  #144-D: a value of type "void (*)(u32)" cannot be used to initialize an entity of type "void (*)(int)"
+code\module\handle\src\handle_global_variable.c(18): warning:  #1-D: last line of file ends without a newline
+compiling usart.c...
+E:\handle\USER\code\module/handle/inc/handle_struct.h(33): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\module/handle/inc/handle.h(17): warning:  #1-D: last line of file ends without a newline
+code\driver\usart\src\usart.c(51): warning:  #940-D: missing return statement at end of non-void function "_sys_exit"
+code\driver\usart\src\usart.c(287): warning:  #1-D: last line of file ends without a newline
+compiling stm32f10x_usart.c...
+compiling stm32f10x_tim.c...
+compiling stm32f10x_gpio.c...
+compiling stm32f10x_rcc.c...
+compiling stm32f10x_can.c...
+compiling misc.c...
+linking...
+Program Size: Code=11064 RO-data=336 RW-data=140 ZI-data=1636  
+FromELF: creating hex file...
+"..\OBJ\LED.axf" - 0 Errors, 25 Warning(s).
+Load "..\\OBJ\\LED.axf" 
+Load "..\\OBJ\\LED.axf" 
+Set JLink Project File to "E:\handle\USER\JLinkSettings.ini"
+* JLink Info: Device "STM32F105RC" selected (256 KB flash, 64 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.84a, compiled Apr  4 2014 18:02:19
+Firmware: J-Link ARM-OB STM32 compiled Aug 22 2012 19:52:04
+Hardware: V7.00
+S/N : 20090928 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F105RC
+VTarget = 3.300V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'Target 1'
+compiling handle_global_variable.c...
+code\module\handle\src\../inc/handle_struct.h(33): warning:  #1-D: last line of file ends without a newline
+code\module\handle\src\../inc/handle.h(17): warning:  #1-D: last line of file ends without a newline
+code\module\handle\src\handle_global_variable.c(16): warning:  #144-D: a value of type "void (*)(u32)" cannot be used to initialize an entity of type "void (*)(int)"
+code\module\handle\src\handle_global_variable.c(18): warning:  #1-D: last line of file ends without a newline
+assembling startup_stm32f10x_hd.s...
+..\CORE\startup_stm32f10x_hd.s(241): error: A1131E: Bad symbol type for exported symbol 'USART1_IRQHandler'
+"..\OBJ\LED.axf" - 1 Errors, 4 Warning(s).
+Target not created
+Build target 'Target 1'
+assembling startup_stm32f10x_hd.s...
+linking...
+Program Size: Code=11064 RO-data=336 RW-data=140 ZI-data=1636  
+FromELF: creating hex file...
+"..\OBJ\LED.axf" - 0 Errors, 0 Warning(s).
+Load "..\\OBJ\\LED.axf" 
+Set JLink Project File to "E:\handle\USER\JLinkSettings.ini"
+* JLink Info: Device "STM32F105RC" selected (256 KB flash, 64 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.84a, compiled Apr  4 2014 18:02:19
+Firmware: J-Link ARM-OB STM32 compiled Aug 22 2012 19:52:04
+Hardware: V7.00
+S/N : 20090928 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F105RC
+VTarget = 3.300V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 0
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'Target 1'
+compiling usart.c...
+E:\handle\USER\code\module/handle/inc/handle_struct.h(33): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\module/handle/inc/handle.h(17): warning:  #1-D: last line of file ends without a newline
+code\driver\usart\src\usart.c(51): warning:  #940-D: missing return statement at end of non-void function "_sys_exit"
+code\driver\usart\src\usart.c(287): warning:  #1-D: last line of file ends without a newline
+assembling startup_stm32f10x_hd.s...
+linking...
+Program Size: Code=11052 RO-data=336 RW-data=140 ZI-data=1636  
+FromELF: creating hex file...
+"..\OBJ\LED.axf" - 0 Errors, 4 Warning(s).
+Load "..\\OBJ\\LED.axf" 
+Set JLink Project File to "E:\handle\USER\JLinkSettings.ini"
+* JLink Info: Device "STM32F105RC" selected (256 KB flash, 64 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.84a, compiled Apr  4 2014 18:02:19
+Firmware: J-Link ARM-OB STM32 compiled Aug 22 2012 19:52:04
+Hardware: V7.00
+S/N : 20090928 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F105RC
+VTarget = 3.300V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 0
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'Target 1'
+compiling main.c...
+E:\handle\USER\code\module/handle/inc/handle_struct.h(33): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\module/handle/inc/handle.h(17): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\control/handle_control/inc/handle_control.h(14): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\control/handle_control/inc/handle_control_global_variable.h(14): warning:  #1-D: last line of file ends without a newline
+code\control\main.c(19): warning:  #111-D: statement is unreachable
+compiling delay.c...
+linking...
+Program Size: Code=11060 RO-data=336 RW-data=140 ZI-data=1636  
+FromELF: creating hex file...
+"..\OBJ\LED.axf" - 0 Errors, 5 Warning(s).
+Load "..\\OBJ\\LED.axf" 
+Set JLink Project File to "E:\handle\USER\JLinkSettings.ini"
+* JLink Info: Device "STM32F105RC" selected (256 KB flash, 64 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.84a, compiled Apr  4 2014 18:02:19
+Firmware: J-Link ARM-OB STM32 compiled Aug 22 2012 19:52:04
+Hardware: V7.00
+S/N : 20090928 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F105RC
+VTarget = 3.300V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 0
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'Target 1'
+compiling main.c...
+E:\handle\USER\code\module/handle/inc/handle_struct.h(33): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\module/handle/inc/handle.h(17): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\control/handle_control/inc/handle_control.h(14): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\control/handle_control/inc/handle_control_global_variable.h(14): warning:  #1-D: last line of file ends without a newline
+code\control\main.c(21): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=11064 RO-data=336 RW-data=140 ZI-data=1636  
+FromELF: creating hex file...
+"..\OBJ\LED.axf" - 0 Errors, 5 Warning(s).
+Load "..\\OBJ\\LED.axf" 
+Set JLink Project File to "E:\handle\USER\JLinkSettings.ini"
+* JLink Info: Device "STM32F105RC" selected (256 KB flash, 64 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.84a, compiled Apr  4 2014 18:02:19
+Firmware: J-Link ARM-OB STM32 compiled Aug 22 2012 19:52:04
+Hardware: V7.00
+S/N : 20090928 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F105RC
+VTarget = 3.300V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 0
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'Target 1'
+linking...
+Program Size: Code=11064 RO-data=336 RW-data=140 ZI-data=1636  
+FromELF: creating hex file...
+"..\OBJ\LED.axf" - 0 Errors, 0 Warning(s).
+Load "..\\OBJ\\LED.axf" 
+Set JLink Project File to "E:\handle\USER\JLinkSettings.ini"
+* JLink Info: Device "STM32F105RC" selected (256 KB flash, 64 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.84a, compiled Apr  4 2014 18:02:19
+Firmware: J-Link ARM-OB STM32 compiled Aug 22 2012 19:52:04
+Hardware: V7.00
+S/N : 20090928 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F105RC
+VTarget = 3.300V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 0
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'Target 1'
+linking...
+Program Size: Code=11064 RO-data=336 RW-data=140 ZI-data=1636  
+FromELF: creating hex file...
+"..\OBJ\LED.axf" - 0 Errors, 0 Warning(s).
+Load "..\\OBJ\\LED.axf" 
+Set JLink Project File to "E:\handle\USER\JLinkSettings.ini"
+* JLink Info: Device "STM32F105RC" selected (256 KB flash, 64 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.84a, compiled Apr  4 2014 18:02:19
+Firmware: J-Link ARM-OB STM32 compiled Aug 22 2012 19:52:04
+Hardware: V7.00
+S/N : 20090928 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F105RC
+VTarget = 3.300V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 0
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'Target 1'
+compiling handle_control.c...
+E:\handle\USER\code\module/handle/inc/handle_struct.h(33): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\module/handle/inc/handle.h(17): warning:  #1-D: last line of file ends without a newline
+code\control\handle_control\src\../inc/handle_control.h(14): warning:  #1-D: last line of file ends without a newline
+code\control\handle_control\src\handle_control.c(65): warning:  #223-D: function "delay_ms" declared implicitly
+code\control\handle_control\src\handle_control.c(69): warning:  #223-D: function "delay_ms" declared implicitly
+code\control\handle_control\src\handle_control.c(87): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=11072 RO-data=336 RW-data=140 ZI-data=1636  
+FromELF: creating hex file...
+"..\OBJ\LED.axf" - 0 Errors, 6 Warning(s).
+Load "..\\OBJ\\LED.axf" 
+Set JLink Project File to "E:\handle\USER\JLinkSettings.ini"
+* JLink Info: Device "STM32F105RC" selected (256 KB flash, 64 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.84a, compiled Apr  4 2014 18:02:19
+Firmware: J-Link ARM-OB STM32 compiled Aug 22 2012 19:52:04
+Hardware: V7.00
+S/N : 20090928 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F105RC
+VTarget = 3.300V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 0
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'Target 1'
+compiling handle_control.c...
+E:\handle\USER\code\module/handle/inc/handle_struct.h(33): warning:  #1-D: last line of file ends without a newline
+E:\handle\USER\code\module/handle/inc/handle.h(17): warning:  #1-D: last line of file ends without a newline
+code\control\handle_control\src\../inc/handle_control.h(14): warning:  #1-D: last line of file ends without a newline
+code\control\handle_control\src\handle_control.c(69): warning:  #223-D: function "delay_ms" declared implicitly
+code\control\handle_control\src\handle_control.c(73): warning:  #223-D: function "delay_ms" declared implicitly
+code\control\handle_control\src\handle_control.c(91): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=8860 RO-data=336 RW-data=140 ZI-data=1636  
+FromELF: creating hex file...
+"..\OBJ\LED.axf" - 0 Errors, 6 Warning(s).
+Load "..\\OBJ\\LED.axf" 
+Set JLink Project File to "E:\handle\USER\JLinkSettings.ini"
+* JLink Info: Device "STM32F105RC" selected (256 KB flash, 64 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.84a, compiled Apr  4 2014 18:02:19
+Firmware: J-Link ARM-OB STM32 compiled Aug 22 2012 19:52:04
+Hardware: V7.00
+S/N : 20090928 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F105RC
+VTarget = 3.300V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 0
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+compiling delay.c...
+"code\driver\delay\src\delay.c" - 0 Errors, 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: Code=8852 RO-data=336 RW-data=140 ZI-data=1636  
+FromELF: creating hex file...
+"..\OBJ\LED.axf" - 0 Errors, 0 Warning(s).
+Load "..\\OBJ\\LED.axf" 
+Set JLink Project File to "E:\handle\USER\JLinkSettings.ini"
+* JLink Info: Device "STM32F105RC" selected (256 KB flash, 64 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.84a, compiled Apr  4 2014 18:02:19
+Firmware: J-Link ARM-OB STM32 compiled Aug 22 2012 19:52:04
+Hardware: V7.00
+S/N : 20090928 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F105RC
+VTarget = 3.300V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 0
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...

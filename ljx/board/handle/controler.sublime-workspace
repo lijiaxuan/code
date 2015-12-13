@@ -1,0 +1,2724 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"han",
+				"handle_control	struct Handle_Control"
+			],
+			[
+				"m_",
+				"m_handle_control_init(struct Handle_Control *phandle_control)	void"
+			],
+			[
+				"in",
+				"m_init	void (*)(struct Handle *)"
+			],
+			[
+				"p",
+				"phandle	struct Handle *"
+			],
+			[
+				"CC",
+				"CCR3	volatile uint16_t"
+			],
+			[
+				"Han",
+				"Handle	struct"
+			],
+			[
+				"s",
+				"steering_angle_ccrx	unsigned short *"
+			],
+			[
+				"hand",
+				"handle_control"
+			],
+			[
+				"P",
+				"PWM_Config	void (*)(void)"
+			],
+			[
+				"inc",
+				"inc	#include \"…\""
+			],
+			[
+				"m",
+				"m_set_steering_angle	void (*)(unsigned short *, float)"
+			],
+			[
+				"_iq",
+				"_iq16	typedef"
+			],
+			[
+				"index",
+				"index_path	unsigned char"
+			],
+			[
+				"str",
+				"strs	statement"
+			],
+			[
+				"th",
+				"theta2	statement"
+			],
+			[
+				"the",
+				"theta1	statement"
+			],
+			[
+				"TFT",
+				"TFT_DrawLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t Color)	void"
+			],
+			[
+				"TFTDr",
+				"TFT_DrawLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t Color)	void"
+			],
+			[
+				"w",
+				"writelines	function"
+			],
+			[
+				"arc",
+				"arctan	instance"
+			],
+			[
+				"TFT_S",
+				"TFT_String(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_t *s)	void"
+			],
+			[
+				"GR",
+				"GRAY2	macro"
+			],
+			[
+				"PWMPulse",
+				"PWMPulseWidthGet(uint32_t ui32Base, uint32_t ui32PWMOut)	uint32_t"
+			],
+			[
+				"SYSCTL_PWMDIV_",
+				"SYSCTL_PWMDIV_64	macro"
+			],
+			[
+				"SYSCTL_PWMD",
+				"SYSCTL_PWMDIV_32	macro"
+			],
+			[
+				"PWMPres",
+				"PWMGenFaultConfigure(uint32_t ui32Base, uint32_t ui32Gen, uint32_t ui32MinFaultPeriod, uint32_t ui32FaultSenses)	void"
+			],
+			[
+				"Key",
+				"Key_value	uint8_t"
+			],
+			[
+				"SYSCTL_SYSDIV_",
+				"SYSCTL_SYSDIV_10	macro"
+			],
+			[
+				"SYSCTL_SYS",
+				"SYSCTL_SYSDIV_5	macro"
+			],
+			[
+				"TimerPresca",
+				"TimerPrescaleGet(uint32_t ui32Base, uint32_t ui32Timer)	uint32_t"
+			],
+			[
+				"SysCtlGet",
+				"SysCtlClockGet()	uint32_t"
+			],
+			[
+				"GPIO_PB",
+				"GPIO_PB4_M0PWM2	macro"
+			],
+			[
+				"Gr",
+				"GRAY2	macro"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "USER/code/control/handle_control/inc/handle_control.h",
+			"settings":
+			{
+				"buffer_size": 417,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "USER/code/control/handle_control/inc/handle_control_struct.h",
+			"settings":
+			{
+				"buffer_size": 598,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 35 files for \"delay\"\n\n/home/obsidian/program/virtualbox/xp/handle/STM32F10x_FWLib/src/stm32f10x_flash.c:\n   82  #define FLASH_BANK1_END_ADDRESS   ((uint32_t)0x807FFFF)\n   83  \n   84: /* Delay definition */   \n   85  #define EraseTimeout          ((uint32_t)0x000B0000)\n   86  #define ProgramTimeout        ((uint32_t)0x00002000)\n\n/home/obsidian/program/virtualbox/xp/handle/USER/main.c:\n    2  #include \"steering.h\"\n    3  #include \"pwm.h\"\n    4: #include \"delay.h\"\n    5  #include \"usart.h\"\n    6  #include \"math.h\"\n    .\n    8  int main(void)\n    9   {	\n   10: 		int fandelaytime;\n   11  		int fanduojipwm=90;\n   12  		int  qianlunduojipwmhandle;\n   ..\n   14  		char flag=0;				//ÅÐ¶ÏÑÓÊ±Ê±¼äµÄ±êÖ¾Î»\n   15  		SystemInit ();\n   16: 		delay_init ();	\n   17  		TIM2_GPIO_Config();\n   18  		TIM2_Mode_Config(90,90 );\n   19  		uart_init (115200);\n   20: 		delay_ms (20);\n   21  // 		TIM2_Mode_Config(90,90);\n   22  	\n   ..\n   31  \n   32  			 //ÏÂÃæÕâÒ»²¿·ÖÊÇÓÃÀ´¿ØÖÆ·«µÄ  			 			 \n   33: 			   fandelaytime=10*fabs(trans_fan.rec_data-0x3000)/0x0800+5;//Í¨¹ý¸Ä±äÇ°ÃæµÄÏµÊýÀ´¿ØÖÆ¶æ»ú±ä»¯ËÙ¶ÈµÄ´óÐ¡\n   34: 			   fandelaytime=20-fandelaytime;\n   35  			   if(trans_fan.rec_data>(0x3000+0x400))\n   36  				 {\n   ..\n   51  // 				 qianlunduojipwmhandle=90+90*(trans_lunzi.rec_data-0x3000)/0x0800;\n   52  // 				  USART_SendData(USART3,0x01);\n   53: // 				 		 delay_ms(10); \n   54  // 				 USART_SendData(USART3,trans_lunzi.temp [1]);\n   55: // 				 delay_ms(10); \n   56  // 				 USART_SendData(USART3,trans_lunzi.temp [0]);\n   57  				 \n   ..\n   84  				 if(flag==1)//ÅÐ¶Ï·«ÊÇ·ñ×ª¶¯\n   85  				 {\n   86: 						delay_ms(fandelaytime);\n   87  					}\n   88  					else\n   89  					{\n   90: 						delay_ms(10);\n   91  					}\n   92  					flag=0;\n   93  // 				  USART_SendData(USART3,0x01);\n   94: // 				 		 delay_ms(10); \n   95  // // 				 USART_SendData(USART3,trans_lunzi.temp [1]);\n   96  // 					USART_SendData(USART3,qianlunduojipwmhandle);\n   97: // 				 delay_ms(10); \n   98  // 					\n   99  // // 				 USART_SendData(USART3,trans_lunzi.temp [0]);\n  100  // 					\n  101  // 					 USART_SendData(USART3,0x02);\n  102: // 				 		 delay_ms(10); \n  103  // // 				 USART_SendData(USART3,trans_lunzi.temp [1]);\n  104  // 					USART_SendData(USART3,trans_lunzi.temp [1]);\n  105: // 					 delay_ms(10);\n  106  // 					USART_SendData(USART3,trans_lunzi.temp [0]);\n  107  					\n\n/home/obsidian/program/virtualbox/xp/handle/USER/code/control/handle_control/src/handle_control.c:\n   17  void m_handle_control(struct Handle_Control* phandle_control)\n   18  {\n   19: 	unsigned short fan_delay_time = 0;\n   20  	struct Handle *phandle = phandle_control->phandle;\n   21: 	fan_delay_time=10 * fabs(phandle->ducted_fan_control_data -0x3000 ) / 0x0800 + 5;//通过改变前面的系数来控制舵机变化速度的大小\n   22: 	fan_delay_time=20-fan_delay_time;\n   23  	if(phandle->ducted_fan_control_data > (0x3000+0x400))\n   24  	{\n   25: 		phandle_control->delay_flag =1;\n   26  		phandle_control->ducted_fan_pwm++;\n   27  		m_set_ducted_fan_angle(phandle->ducted_fan_ccrx,phandle_control->ducted_fan_pwm);				\n   ..\n   29  	if(phandle->ducted_fan_control_data<(0x3000-0x400))\n   30  	{\n   31: 		phandle_control->delay_flag =1;\n   32  		phandle_control->ducted_fan_pwm--;\n   33  		m_set_ducted_fan_angle(phandle->steering_angle_ccrx,phandle_control->ducted_fan_pwm);\n   ..\n   57  		m_set_steering_angle(phandle->steering_angle_ccrx,phandle_control->steering_pwm);	\n   58  	}\n   59: 	if(phandle_control->delay_flag==1)//判断帆是否转动\n   60  	{\n   61: 		delay_ms(fan_delay_time);\n   62  	}\n   63  	else\n   64  	{\n   65: 		delay_ms(10);\n   66  	}\n   67: 	phandle_control->delay_flag=0;\n   68  }\n   69  \n\n/home/obsidian/program/virtualbox/xp/handle/USER/code/driver/delay/src/delay.c:\n    2  #include \"stm32f10x_rcc.h\"\n    3  \n    4: __IO uint32_t TimingDelay;\n    5  \n    6  void SYSTICK_Init(void)\n    .\n   14  	NVIC_SetPriority(SysTick_IRQn,0);\n   15  }\n   16: void TimingDelay_Decrement(void)\n   17  {\n   18:   if (TimingDelay != 0x00)\n   19    { \n   20:     TimingDelay--;\n   21    }\n   22  }\n   23  void SysTick_Handler(void)\n   24  {\n   25: 	TimingDelay_Decrement();\n   26  }\n   27: void Delay_us(__IO uint32_t nTime)\n   28  { \n   29:   TimingDelay = nTime;\n   30  	\n   31:   while(TimingDelay!=0);\n   32  }\n   33: void Delay_ms(__IO uint32_t nTime)\n   34  { \n   35:   TimingDelay = nTime*1000;\n   36  	\n   37:   while(TimingDelay!=0);\n   38  }	\n   39: void DelayS(uint32_t t)\n   40  {\n   41  	while(t)\n\n/home/obsidian/program/virtualbox/xp/handle/USER/code/driver/pwm/src/pwm.c:\n   74  //      \n   75  //   }   \n   76: //   delay_ms(100);//下降沿销抖  \n   77  //     \n   78  //   while(GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_12)!=Bit_SET);  \n\n/home/obsidian/program/virtualbox/xp/handle/USER/code/driver/usart/src/usart.c:\n  283  \n  284  \n  285: #ifdef DELAY_TIME\n  286  \n  287  #endif	\n\n42 matches across 6 files\n\n\nSearching 35 files for \"delay_ms\"\n\n/home/obsidian/program/virtualbox/xp/handle/USER/main.c:\n   18  		TIM2_Mode_Config(90,90 );\n   19  		uart_init (115200);\n   20: 		delay_ms (20);\n   21  // 		TIM2_Mode_Config(90,90);\n   22  	\n   ..\n   51  // 				 qianlunduojipwmhandle=90+90*(trans_lunzi.rec_data-0x3000)/0x0800;\n   52  // 				  USART_SendData(USART3,0x01);\n   53: // 				 		 delay_ms(10); \n   54  // 				 USART_SendData(USART3,trans_lunzi.temp [1]);\n   55: // 				 delay_ms(10); \n   56  // 				 USART_SendData(USART3,trans_lunzi.temp [0]);\n   57  				 \n   ..\n   84  				 if(flag==1)//ÅÐ¶Ï·«ÊÇ·ñ×ª¶¯\n   85  				 {\n   86: 						delay_ms(fandelaytime);\n   87  					}\n   88  					else\n   89  					{\n   90: 						delay_ms(10);\n   91  					}\n   92  					flag=0;\n   93  // 				  USART_SendData(USART3,0x01);\n   94: // 				 		 delay_ms(10); \n   95  // // 				 USART_SendData(USART3,trans_lunzi.temp [1]);\n   96  // 					USART_SendData(USART3,qianlunduojipwmhandle);\n   97: // 				 delay_ms(10); \n   98  // 					\n   99  // // 				 USART_SendData(USART3,trans_lunzi.temp [0]);\n  100  // 					\n  101  // 					 USART_SendData(USART3,0x02);\n  102: // 				 		 delay_ms(10); \n  103  // // 				 USART_SendData(USART3,trans_lunzi.temp [1]);\n  104  // 					USART_SendData(USART3,trans_lunzi.temp [1]);\n  105: // 					 delay_ms(10);\n  106  // 					USART_SendData(USART3,trans_lunzi.temp [0]);\n  107  					\n\n/home/obsidian/program/virtualbox/xp/handle/USER/code/control/handle_control/src/handle_control.c:\n   59  	if(phandle_control->delay_flag==1)//判断帆是否转动\n   60  	{\n   61: 		delay_ms(fan_delay_time);\n   62  	}\n   63  	else\n   64  	{\n   65: 		delay_ms(10);\n   66  	}\n   67  	phandle_control->delay_flag=0;\n\n/home/obsidian/program/virtualbox/xp/handle/USER/code/driver/delay/src/delay.c:\n   31    while(TimingDelay!=0);\n   32  }\n   33: void Delay_ms(__IO uint32_t nTime)\n   34  { \n   35    TimingDelay = nTime*1000;\n\n/home/obsidian/program/virtualbox/xp/handle/USER/code/driver/pwm/src/pwm.c:\n   74  //      \n   75  //   }   \n   76: //   delay_ms(100);//下降沿销抖  \n   77  //     \n   78  //   while(GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_12)!=Bit_SET);  \n\n13 matches across 4 files\n",
+			"settings":
+			{
+				"buffer_size": 7016,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "USER/code/control/handle_control/src/handle_control.c",
+			"settings":
+			{
+				"buffer_size": 2590,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "#ifndef __DELAY_H\n#define __DELAY_H 			\n#include \"stm32f10x_gpio.h\"\n#include \"stm32f10x_rcc.h\"\n#include \"misc.h\"   \nvoid SYSTICK_Init(void);\nvoid delay_us(unsigned int nTime);\nvoid delay_ms(unsigned int nTime);\nvoid TimingDelay_Decrement(void);\nvoid DelayS(unsigned int t);\n#endif\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+			"file": "USER/code/driver/delay/inc/delay.h",
+			"file_size": 346,
+			"file_write_time": 130939727736525549,
+			"settings":
+			{
+				"buffer_size": 308,
+				"line_ending": "Windows",
+				"scratch": true
+			}
+		},
+		{
+			"contents": "#include \"../inc/delay.h\"\n__IO uint32_t TimingDelay;\n\nvoid SYSTICK_Init(void)\n{\n	if(SysTick_Config(SystemCoreClock /1000))\n	{ \n		/* Capture error */ \n		while (1);\n	}\n	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_1);\n	NVIC_SetPriority(SysTick_IRQn,0);\n}\nvoid TimingDelay_Decrement(void)\n{\n  if (TimingDelay != 0x00)\n  { \n    TimingDelay--;\n  }\n}\nvoid SysTick_Handler(void)\n{\n	TimingDelay_Decrement();\n}\nvoid delay_us(__IO uint32_t nTime)\n{ \n  TimingDelay = nTime;\n	\n  while(TimingDelay!=0);\n}\nvoid delay_ms(__IO uint32_t nTime)\n{ \n  TimingDelay = nTime;\n	\n  while(TimingDelay!=0);\n}	\nvoid DelayS(uint32_t t)\n{\n	while(t)\n	{t--;}\n}\n\n\n",
+			"file": "USER/code/driver/delay/src/delay.c",
+			"file_size": 673,
+			"file_write_time": 130939739130605870,
+			"settings":
+			{
+				"buffer_size": 630,
+				"line_ending": "Windows",
+				"scratch": true
+			}
+		},
+		{
+			"file": "CORE/core_cm3.h",
+			"settings":
+			{
+				"buffer_size": 83896,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "USER/code/control/main.c",
+			"settings":
+			{
+				"buffer_size": 457,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "USER/code/module/handle/inc/handle.h",
+			"settings":
+			{
+				"buffer_size": 359,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "#include \"stm32f10x_gpio.h\"\n#include \"stm32f10x_rcc.h\"\n#include \"stm32f10x_tim.h\"\n#include \"../inc/pwm.h\"\nvoid TIM2_GPIO_Config(void)\n{\n	GPIO_InitTypeDef GPIO_Initstructure;\n	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2  , ENABLE);\n	RCC_APB2PeriphClockCmd (RCC_APB2Periph_GPIOA |RCC_APB2Periph_GPIOC|RCC_APB2Periph_AFIO, ENABLE );\n	GPIO_Initstructure . GPIO_Pin =GPIO_Pin_2| GPIO_Pin_3 ;\n	GPIO_Initstructure .GPIO_Mode =GPIO_Mode_AF_PP ;\n	GPIO_Initstructure .GPIO_Speed =GPIO_Speed_50MHz;\n	GPIO_Init (GPIOA,&GPIO_Initstructure );\n}\n\nvoid TIM2_Mode_Config(int t1,int t2 )\n{\n	TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;\n	TIM_OCInitTypeDef  TIM_OCInitStructure;\n	TIM_TimeBaseStructure .TIM_Period =7999;\n	TIM_TimeBaseStructure .TIM_Prescaler =179;\n	TIM_TimeBaseStructure .TIM_ClockDivision =TIM_CKD_DIV1  ;\n	TIM_TimeBaseStructure .TIM_CounterMode =TIM_CounterMode_Up ;\n	TIM_TimeBaseInit (TIM2 ,&TIM_TimeBaseStructure );\n	\n	TIM_OCInitStructure .TIM_OCMode = TIM_OCMode_PWM1 ;\n	TIM_OCInitStructure .TIM_OutputState = TIM_OutputState_Enable ;\n	TIM_OCInitStructure .TIM_Pulse = 400 + 600 * t1 / 180 ;\n	TIM_OCInitStructure .TIM_OCPolarity = TIM_OCPolarity_High ;\n	TIM_OC3Init(TIM2 ,&TIM_OCInitStructure );\n	TIM_OC3PreloadConfig (TIM2,TIM_OCPreload_Enable );\n	\n	TIM_OCInitStructure .TIM_OutputState = TIM_OutputState_Enable ;\n	TIM_OCInitStructure .TIM_Pulse = 400 + 600 * t2 / 180 ;\n	TIM_OC4Init(TIM2 ,&TIM_OCInitStructure );\n	TIM_OC4PreloadConfig (TIM2,TIM_OCPreload_Enable );\n	TIM_ARRPreloadConfig (TIM2,ENABLE );\n	TIM2_GPIO_Config();\n	TIM_Cmd(TIM2,ENABLE );\n}\n\n// void NVIC_Config()\n// {\n// 	NVIC_InitTypeDef NVIC_InitStructure;\n//     NVIC_PriorityGroupConfig(NVIC_PriorityGroup_1);\n// 	\n// 	NVIC_InitStructure.NVIC_IRQChannel = EXTI15_10_IRQn; \n// 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1; \n// 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 2; \n// 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE; \n// 	NVIC_Init(&NVIC_InitStructure); \n// }\n// void EXTI_Configuration(void)\n// {\n\n// 	EXTI_InitTypeDef EXTI_InitStructure;\n// 	 GPIO_EXTILineConfig(GPIO_PortSourceGPIOA,GPIO_PinSource12);	\n// 	EXTI_InitStructure.EXTI_Line=EXTI_Line12;\n// 	EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;\n// 	EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Falling;\n// 	EXTI_InitStructure.EXTI_LineCmd = ENABLE;\n// 	EXTI_Init(&EXTI_InitStructure);\n// 	\n// //  	 GPIO_SetBits(GPIOC ,GPIO_Pin_6);\n\n// }\n\n//  void EXTI15_10IRQHandler(void)  \n// {      \n//   \n//   if(EXTI_GetITStatus(EXTI_Line12)==SET)  \n//   {     \n//      GPIO_WriteBit(GPIOA,GPIO_Pin_12,(BitAction)(Bit_SET-GPIO_ReadOutputDataBit(GPIOA,GPIO_Pin_12)));  \n//      \n//   }   \n//   delay_ms(100);//下降沿销抖  \n//     \n//   while(GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_12)!=Bit_SET);  \n//     \n//   CCR1_Val+=200;\n\n//   Test_MOTO (CCR1_Val);\n//   EXTI_ClearITPendingBit(EXTI_Line12);  \n// } \n\n// void  Test_MOTO( double a1,double  a2)\n// {\n//   TIM_OCInitStructure.TIM_Pulse = 400+600*a1/180;\n// 	TIM_OC4Init(TIM2, &TIM_OCInitStructure);\n// 	TIM_OCInitStructure.TIM_Pulse = 400+600*a2/180;\n// 	TIM_OC3Init(TIM2, &TIM_OCInitStructure);\n// }\n",
+			"file": "USER/code/driver/pwm/src/pwm.c",
+			"file_size": 3191,
+			"file_write_time": 130939258094396525,
+			"settings":
+			{
+				"buffer_size": 3094,
+				"line_ending": "Windows",
+				"scratch": true
+			}
+		},
+		{
+			"file": "USER/code/driver/pwm/inc/pwm.h",
+			"settings":
+			{
+				"buffer_size": 107,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "USER/code/module/handle/src/handle.c",
+			"settings":
+			{
+				"buffer_size": 405,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "USER/code/module/handle/inc/handle_struct.h",
+			"settings":
+			{
+				"buffer_size": 608,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "USER/code/driver/usart/inc/usart.h",
+			"settings":
+			{
+				"buffer_size": 1162,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/C++/C++ Single File.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Anaconda Python Builder",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Anaconda Python Builder",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 332.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"About"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 507.0
+	},
+	"console":
+	{
+		"height": 250.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)  "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/obsidian/program/virtualbox/xp/handle",
+		"/home/obsidian/program/virtualbox/xp/handle/STM32F10x_FWLib",
+		"/home/obsidian/program/virtualbox/xp/handle/STM32F10x_FWLib/inc",
+		"/home/obsidian/program/virtualbox/xp/handle/USER",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/driver",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/driver/delay",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/driver/delay/inc",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/driver/delay/src",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/driver/pwm",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/driver/pwm/inc",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/driver/pwm/src",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/driver/usart",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/driver/usart/inc",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/driver/usart/src"
+	],
+	"file_history":
+	[
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/control/handle_control/src/handle_control_global_variable.c",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/control/handle_control/inc/handle_control_global_variable.h",
+		"/home/obsidian/program/virtualbox/xp/code/test.c",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/stm32f10x.h",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/control/handle_control/src/handle_control.c",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/module/handle/src/handle_global_variable.c",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/module/handle/inc/handle_global_variable.h",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/main.c",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/control/handle_control/inc/handle_control_struct.h",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/driver/pwm/inc/pwm.h",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/driver/usart/inc/usart.h",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/control/handle_control/inc/handle_control.h",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/driver/usart/src/usart.c",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/module/handle/inc/handle.h",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/module/handle/src/handle.c",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/module/handle/inc/handle_struct.h",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/driver/pwm/src/pwm.c",
+		"/home/obsidian/program/virtualbox/xp/handle/HARDWARE/LED/usart.c",
+		"/home/obsidian/program/virtualbox/xp/handle/HARDWARE/LED/usart.h",
+		"/home/obsidian/program/virtualbox/xp/handle/HARDWARE/LED/led.h",
+		"/home/obsidian/program/virtualbox/xp/handle/HARDWARE/steering/steering.h",
+		"/home/obsidian/program/virtualbox/xp/handle/HARDWARE/LED/pwm.c",
+		"/home/obsidian/program/virtualbox/xp/handle/HARDWARE/steering/steering.c",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/driver/delay/inc/delay.h",
+		"/home/obsidian/program/virtualbox/xp/handle/STM32F10x_FWLib/inc/misc.h",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/driver/delay/src/delay.c",
+		"/home/obsidian/program/virtualbox/xp/handle/SYSTEM/delay/delay.c",
+		"/home/obsidian/program/virtualbox/xp/handle/SYSTEM/delay/delay.h",
+		"/home/obsidian/program/virtualbox/xp/handle/SYSTEM/sys/sys.c",
+		"/home/obsidian/program/virtualbox/xp/handle/SYSTEM/sys/sys.h",
+		"/home/obsidian/program/virtualbox/xp/handle/SYSTEM/usart/usart.c",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/driver/inc/driver_include.h",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/driver/usart/inc/usart_global_variables.h",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/driver/usart/inc/usart_struct_define.h",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/driver/usart/src/usart_global_variables.c",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/code/control/src/main.c",
+		"/home/obsidian/program/virtualbox/xp/handle/SYSTEM/usart/usart.h",
+		"/home/obsidian/program/virtualbox/xp/handle/controler.sublime-project",
+		"/home/obsidian/program/virtualbox/xp/handle/USER/stm32f10x_it.h",
+		"/home/obsidian/program/virtualbox/xp/LED/STM32F10x_FWLib/inc/stm32f10x_can.h",
+		"/home/obsidian/program/virtualbox/xp/LED/led.sublime-project",
+		"/home/obsidian/program/virtualbox/xp/LED/USER/stm32f10x.h",
+		"/home/obsidian/program/virtualbox/xp/LED/STM32F10x_FWLib/inc/stm32f10x_usart.h",
+		"/home/obsidian/program/virtualbox/xp/LED/USER/m_math.c",
+		"/home/obsidian/program/virtualbox/xp/LED/USER/main.c",
+		"/home/obsidian/program/virtualbox/xp/LED/USER/m_math.h",
+		"/home/obsidian/program/virtualbox/xp/code/pyqt/test/data",
+		"/media/obsidian/LJX/data",
+		"/home/obsidian/program/virtualbox/xp/data",
+		"/home/obsidian/program/virtualbox/xp/LED/STM32F10x_FWLib/src/led.sublime-project",
+		"/home/obsidian/program/virtualbox/xp/tm4c/inc/led.sublime-project",
+		"/home/obsidian/program/virtualbox/xp/ti/examples/peripherals/timer/periodic_16bit.c",
+		"/home/obsidian/program/ljx/keil/蒋邦亮M4/src/main.c",
+		"/home/obsidian/program/ljx/keil/蒋邦亮M4/driverlib/all.h",
+		"/home/obsidian/program/virtualbox/xp/tm4c/inc/my_timer.h",
+		"/home/obsidian/program/virtualbox/xp/tm4c/inc/my_pwm.h",
+		"/home/obsidian/program/virtualbox/xp/tm4c/src/global_variable.c",
+		"/home/obsidian/program/virtualbox/xp/tm4c/inc/global_variable.h",
+		"/home/obsidian/program/virtualbox/xp/tm4c/script/data",
+		"/home/obsidian/program/virtualbox/xp/tm4c/script/angle.py",
+		"/home/obsidian/program/virtualbox/xp/tm4c/inc/includes.h",
+		"/home/obsidian/.config/sublime-text-3/Packages/User/SublimeClang.sublime-settings",
+		"/home/obsidian/program/virtualbox/xp/tm4c/src/keyboard.c",
+		"/home/obsidian/program/virtualbox/xp/tm4c/src/my_timer.c",
+		"/home/obsidian/program/virtualbox/xp/tm4c/src/my_pwm.c",
+		"/home/obsidian/program/virtualbox/xp/tm4c/src/main.c",
+		"/usr/include/limits.h",
+		"/home/obsidian/program/virtualbox/xp/tm4c/src/pso.c",
+		"/home/obsidian/program/virtualbox/xp/tm4c/inc/pso.h",
+		"/home/obsidian/program/virtualbox/xp/tm4c/script/path.py",
+		"/home/obsidian/program/virtualbox/xp/tm4c/inc/table.h",
+		"/home/obsidian/program/virtualbox/xp/tm4c/src/table.c",
+		"/home/obsidian/program/virtualbox/xp/tm4c/script/test.py",
+		"/home/obsidian/program/virtualbox/xp/tm4c/src/lcd.c",
+		"/home/obsidian/program/virtualbox/xp/tm4c/inc/lcd.h",
+		"/home/obsidian/.config/sublime-text-3/Packages/User/Anaconda.sublime-settings",
+		"/home/obsidian/program/virtualbox/xp/tm4c/table.h",
+		"/home/obsidian/program/virtualbox/xp/tm4c/inc/font.h",
+		"/home/obsidian/.config/sublime-text-3/Packages/Anaconda/Anaconda.sublime-settings",
+		"/home/obsidian/program/virtualbox/xp/tm4c/inc/keyboard.h",
+		"/home/obsidian/program/virtualbox/xp/ti/examples/peripherals/pwm/reload_interrupt.c",
+		"/home/obsidian/program/virtualbox/xp/ti/examples/peripherals/timer/pwm.c",
+		"/home/obsidian/program/virtualbox/xp/tm4c/global_variable.h",
+		"/home/obsidian/program/virtualbox/xp/tm4c/global_variable.c",
+		"/home/obsidian/program/virtualbox/xp/tm4c/other/startup_rvmdk.S",
+		"/home/obsidian/program/virtualbox/xp/ti/driverlib/interrupt.c",
+		"/home/obsidian/program/virtualbox/xp/ti/examples/peripherals/pwm/dead_band.c",
+		"/home/obsidian/program/virtualbox/xp/tm4c/my_timer.h",
+		"/home/obsidian/program/virtualbox/xp/ti/inc/hw_gpio.h",
+		"/home/obsidian/program/virtualbox/xp/ti/inc/hw_ints.h",
+		"/home/obsidian/program/virtualbox/xp/tm4c/src/font.c",
+		"/home/obsidian/.config/sublime-text-3/Packages/User/SublimeTmpl.sublime-settings",
+		"/home/obsidian/.config/sublime-text-3/Packages/SublimeTmpl/templates/C.tmpl",
+		"/home/obsidian/.config/sublime-text-3/Packages/SublimeTmpl/Main.sublime-menu",
+		"/home/obsidian/program/virtualbox/xp/ti/driverlib/sysctl.h",
+		"/home/obsidian/program/virtualbox/xp/tm4c/tm4c.sublime-project",
+		"/home/obsidian/.config/sublime-text-3/Packages/SublimeTmpl/SublimeTmpl.sublime-settings",
+		"/home/obsidian/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/obsidian/.config/sublime-text-3/Packages/User/CTags.sublime-settings"
+	],
+	"find":
+	{
+		"height": 31.0
+	},
+	"find_in_files":
+	{
+		"height": 104.0,
+		"where_history":
+		[
+			"<project>,*.c",
+			"<project>"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"delay_ms",
+			"delay",
+			"set_anglelunzi",
+			"qianlunduojipwmreal",
+			"qianlunduojipwmhandle",
+			"trans_lunzi.rec_data",
+			"set_anglefan",
+			"delay_flag",
+			"flag",
+			"handle_control.",
+			"trans_fan.rec_data",
+			"fandelaytime",
+			"fanduojipwm",
+			"USART_RX_BUF",
+			"USART1_",
+			";",
+			"\\",
+			";..\\",
+			"--c99",
+			"H"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"m_set_steering_angle",
+			"phandle_control->steering_pwm",
+			"phandle_control->steering_pwm_handle",
+			"phandle_control->steering_handle",
+			"phandle->steering_angle_control_data",
+			"phandle->steer_angle_control_data",
+			"m_set_steering_angle",
+			"m_set_ducted_fan_angle",
+			"phandle_control->delay_flag",
+			"delay_flag",
+			"phandle_control->",
+			"handle_control.phandle->ducted_fan_control_data",
+			"fan_delay_time",
+			"handle_control.ducted_fan_pwm",
+			"ducted_fan_pwm",
+			",",
+			"/",
+			"\";\"/home/obsidian/program/virtualbox/xp/LED"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 7,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "USER/code/control/handle_control/inc/handle_control.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 417,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								385,
+								385
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"c_time":
+							[
+								128,
+								3,
+								99,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								113,
+								0,
+								67,
+								10,
+								7,
+								223,
+								12,
+								7,
+								11,
+								5,
+								20,
+								0,
+								0,
+								0,
+								113,
+								1,
+								133,
+								113,
+								2,
+								82,
+								113,
+								3,
+								46
+							],
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/C Improved/C Improved.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "USER/code/control/handle_control/inc/handle_control_struct.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 598,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								558,
+								558
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"c_time":
+							[
+								128,
+								3,
+								99,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								113,
+								0,
+								67,
+								10,
+								7,
+								223,
+								12,
+								7,
+								11,
+								13,
+								16,
+								0,
+								0,
+								0,
+								113,
+								1,
+								133,
+								113,
+								2,
+								82,
+								113,
+								3,
+								46
+							],
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/C Improved/C Improved.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 207.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7016,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										196,
+										201
+									],
+									[
+										467,
+										472
+									],
+									[
+										582,
+										587
+									],
+									[
+										746,
+										751
+									],
+									[
+										864,
+										869
+									],
+									[
+										1005,
+										1010
+									],
+									[
+										1120,
+										1125
+									],
+									[
+										1136,
+										1141
+									],
+									[
+										1362,
+										1367
+									],
+									[
+										1452,
+										1457
+									],
+									[
+										1613,
+										1618
+									],
+									[
+										1625,
+										1630
+									],
+									[
+										1695,
+										1700
+									],
+									[
+										1806,
+										1811
+									],
+									[
+										1960,
+										1965
+									],
+									[
+										2133,
+										2138
+									],
+									[
+										2287,
+										2292
+									],
+									[
+										2579,
+										2584
+									],
+									[
+										2666,
+										2671
+									],
+									[
+										2779,
+										2784
+									],
+									[
+										2797,
+										2802
+									],
+									[
+										2907,
+										2912
+									],
+									[
+										3163,
+										3168
+									],
+									[
+										3453,
+										3458
+									],
+									[
+										3496,
+										3501
+									],
+									[
+										3509,
+										3514
+									],
+									[
+										3564,
+										3569
+									],
+									[
+										3613,
+										3618
+									],
+									[
+										3794,
+										3799
+									],
+									[
+										3915,
+										3920
+									],
+									[
+										3965,
+										3970
+									],
+									[
+										4009,
+										4014
+									],
+									[
+										4095,
+										4100
+									],
+									[
+										4135,
+										4140
+									],
+									[
+										4190,
+										4195
+									],
+									[
+										4235,
+										4240
+									],
+									[
+										4267,
+										4272
+									],
+									[
+										4322,
+										4327
+									],
+									[
+										4372,
+										4377
+									],
+									[
+										4405,
+										4410
+									],
+									[
+										4572,
+										4577
+									],
+									[
+										4794,
+										4799
+									],
+									[
+										5022,
+										5030
+									],
+									[
+										5233,
+										5241
+									],
+									[
+										5323,
+										5331
+									],
+									[
+										5484,
+										5492
+									],
+									[
+										5566,
+										5574
+									],
+									[
+										5677,
+										5685
+									],
+									[
+										5831,
+										5839
+									],
+									[
+										6004,
+										6012
+									],
+									[
+										6158,
+										6166
+									],
+									[
+										6416,
+										6424
+									],
+									[
+										6484,
+										6492
+									],
+									[
+										6681,
+										6689
+									],
+									[
+										6878,
+										6886
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								6287,
+								6287
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"default_dir": "/home/obsidian/program/virtualbox/xp/handle",
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 2,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 4554.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "USER/code/control/handle_control/src/handle_control.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2590,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2078,
+								2078
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"c_time":
+							[
+								128,
+								3,
+								99,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								113,
+								0,
+								67,
+								10,
+								7,
+								223,
+								12,
+								7,
+								15,
+								43,
+								8,
+								0,
+								0,
+								0,
+								113,
+								1,
+								133,
+								113,
+								2,
+								82,
+								113,
+								3,
+								46
+							],
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/C Improved/C Improved.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1242.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "USER/code/driver/delay/inc/delay.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 308,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								251,
+								251
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"c_time":
+							[
+								128,
+								3,
+								99,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								113,
+								0,
+								67,
+								10,
+								7,
+								223,
+								12,
+								7,
+								22,
+								35,
+								8,
+								0,
+								0,
+								0,
+								113,
+								1,
+								133,
+								113,
+								2,
+								82,
+								113,
+								3,
+								46
+							],
+							"in_converting": true,
+							"origin_encoding": "GB2312",
+							"syntax": "Packages/C Improved/C Improved.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "USER/code/driver/delay/src/delay.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 630,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								77,
+								77
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"c_time":
+							[
+								128,
+								3,
+								99,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								113,
+								0,
+								67,
+								10,
+								7,
+								223,
+								12,
+								7,
+								22,
+								35,
+								13,
+								0,
+								0,
+								0,
+								113,
+								1,
+								133,
+								113,
+								2,
+								82,
+								113,
+								3,
+								46
+							],
+							"in_converting": true,
+							"origin_encoding": "GB2312",
+							"syntax": "Packages/C Improved/C Improved.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "CORE/core_cm3.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 83896,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4063,
+								4063
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"c_time":
+							[
+								128,
+								3,
+								99,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								113,
+								0,
+								67,
+								10,
+								7,
+								223,
+								12,
+								6,
+								22,
+								16,
+								14,
+								0,
+								0,
+								0,
+								113,
+								1,
+								133,
+								113,
+								2,
+								82,
+								113,
+								3,
+								46
+							],
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/C Improved/C Improved.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2240.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "USER/code/control/main.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 457,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								301,
+								301
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"c_time":
+							[
+								128,
+								3,
+								99,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								113,
+								0,
+								67,
+								10,
+								7,
+								223,
+								12,
+								7,
+								15,
+								44,
+								35,
+								0,
+								0,
+								0,
+								113,
+								1,
+								133,
+								113,
+								2,
+								82,
+								113,
+								3,
+								46
+							],
+							"open_with_edit": true,
+							"syntax": "Packages/C Improved/C Improved.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "USER/code/module/handle/inc/handle.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 359,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								297,
+								297
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"c_time":
+							[
+								128,
+								3,
+								99,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								113,
+								0,
+								67,
+								10,
+								7,
+								223,
+								12,
+								7,
+								9,
+								17,
+								25,
+								0,
+								0,
+								0,
+								113,
+								1,
+								133,
+								113,
+								2,
+								82,
+								113,
+								3,
+								46
+							],
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/C Improved/C Improved.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "USER/code/driver/pwm/src/pwm.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3094,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								568,
+								568
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"c_time":
+							[
+								128,
+								3,
+								99,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								113,
+								0,
+								67,
+								10,
+								7,
+								223,
+								12,
+								7,
+								9,
+								36,
+								49,
+								0,
+								0,
+								0,
+								113,
+								1,
+								133,
+								113,
+								2,
+								82,
+								113,
+								3,
+								46
+							],
+							"in_converting": true,
+							"origin_encoding": "GB2312",
+							"syntax": "Packages/C Improved/C Improved.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1035.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "USER/code/driver/pwm/inc/pwm.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 107,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								106,
+								106
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"c_time":
+							[
+								128,
+								3,
+								99,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								113,
+								0,
+								67,
+								10,
+								7,
+								223,
+								12,
+								7,
+								9,
+								36,
+								46,
+								0,
+								0,
+								0,
+								113,
+								1,
+								133,
+								113,
+								2,
+								82,
+								113,
+								3,
+								46
+							],
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/C Improved/C Improved.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "USER/code/module/handle/src/handle.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 405,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								309,
+								309
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"c_time":
+							[
+								128,
+								3,
+								99,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								113,
+								0,
+								67,
+								10,
+								7,
+								223,
+								12,
+								7,
+								10,
+								33,
+								58,
+								0,
+								0,
+								0,
+								113,
+								1,
+								133,
+								113,
+								2,
+								82,
+								113,
+								3,
+								46
+							],
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/C Improved/C Improved.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "USER/code/module/handle/inc/handle_struct.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 608,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								576,
+								576
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"c_time":
+							[
+								128,
+								3,
+								99,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								113,
+								0,
+								67,
+								10,
+								7,
+								223,
+								12,
+								7,
+								10,
+								33,
+								42,
+								0,
+								0,
+								0,
+								113,
+								1,
+								133,
+								113,
+								2,
+								82,
+								113,
+								3,
+								46
+							],
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/C Improved/C Improved.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 345.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "USER/code/driver/usart/inc/usart.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1162,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1151,
+								1151
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"c_time":
+							[
+								128,
+								3,
+								99,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								113,
+								0,
+								67,
+								10,
+								7,
+								223,
+								12,
+								7,
+								9,
+								52,
+								30,
+								0,
+								0,
+								0,
+								113,
+								1,
+								133,
+								113,
+								2,
+								82,
+								113,
+								3,
+								46
+							],
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/C Improved/C Improved.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 552.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.clang":
+	{
+		"height": 204.0
+	},
+	"output.exec":
+	{
+		"height": 129.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/C++/C++ Single File.sublime-build",
+	"project": "controler.sublime-project",
+	"replace":
+	{
+		"height": 74.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"stm3210x_can",
+				"STM32F10x_FWLib/inc/stm32f10x_can.h"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 341.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

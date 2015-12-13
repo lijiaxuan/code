@@ -1,0 +1,22 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+	"settings":
+	{
+		"sublimeclang_options":
+		[
+			"-I/home/obsidian/program/virtualbox/xp/handle/HARDWARE/LED",
+			"-I/home/obsidian/program/virtualbox/xp/handle/SYSTEM/delay",
+			"-I/home/obsidian/program/virtualbox/xp/handle/SYSTEM/sys",
+			"-I/home/obsidian/program/virtualbox/xp/handle/SYSTEM/usart",
+			"-I/home/obsidian/program/virtualbox/xp/handle/USER",
+			"-I/home/obsidian/program/virtualbox/xp/handle/USER/code",
+			"-I/home/obsidian/program/virtualbox/xp/handle/STM32F10x_FWLib/inc",
+			"-I/home/obsidian/program/virtualbox/xp/handle/CORE"
+		]
+	}
+}

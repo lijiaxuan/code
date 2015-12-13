@@ -1,0 +1,5 @@
+-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\LED -I..\HARDWARE\steering -I..\SYSTEM\delay 
+-I "D:\mini STM32\Eclipse\ARM\RV31\INC" 
+-I "D:\mini STM32\Eclipse\ARM\CMSIS\Include" 
+-I "D:\mini STM32\Eclipse\ARM\Inc\ST\STM32F10x" 
+-DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -o "..\OBJ\usart.o" --omf_browse "..\OBJ\usart.crf" --depend "..\OBJ\usart.d" "..\HARDWARE\LED\usart.c"
