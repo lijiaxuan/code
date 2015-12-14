@@ -1,5 +1,5 @@
 #cp -r /home/obsidian/program/ljx /home/obsidian/program/git
-dataname=$(date + %Y%m%d)
+dataname=$(date +%Y%m%d)
 echo $datename
 cd ~/program/git
 #rm *.tgz
