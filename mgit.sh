@@ -1,11 +1,11 @@
 #cp -r /home/obsidian/program/ljx /home/obsidian/program/git
-dataname=$(date +%Y%m%d)
-echo $datename
+tar1name=$(date +%Y_%m_%d_ljx.tgz)
+tar2name=$(date +%Y_%m_%d_xp.tgz)
 cd ~/program/git
 #rm *.tgz
-find ../ljx -type f \( -name "*.c" -or -name "*.h" -or -name "*.py" -or -name "*.nb" -or -name "*.m" -or -name "*.md" \) |xargs tar czf $datetime"ljx.tgz"
+find ../ljx -type f \( -name "*.c" -or -name "*.h" -or -name "*.py" -or -name "*.nb" -or -name "*.m" -or -name "*.md" \) |xargs tar czf $tar1name
 cd /home/obsidian/virtualbox/xp/code
-find ./ -type f \( -name "*.c" -or -name "*.h" -or -name "*.py" -or -name "*.nb" -or -name "*.m" -or -name "*.md" \) |xargs tar czf /home/obsidian/program/git/$datetime"xp.tgz"
+find ./ -type f \( -name "*.c" -or -name "*.h" -or -name "*.py" -or -name "*.nb" -or -name "*.m" -or -name "*.md" \) |xargs tar czf /home/obsidian/program/git/$tar2name
 cd ~/program/git
 git add .
 git commit -a -m "store"
