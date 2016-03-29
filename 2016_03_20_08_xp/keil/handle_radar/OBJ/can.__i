@@ -1,0 +1,5 @@
+-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\LED -I..\HARDWARE\steering -I..\SYSTEM\delay -Icode --c99 
+-I C:\Keil\ARM\RV31\INC 
+-I C:\Keil\ARM\CMSIS\Include 
+-I C:\Keil\ARM\Inc\ST\STM32F10x 
+-DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DRADAR -DGPS_ENABLE -DLEFT -o "..\OBJ\can.o" --omf_browse "..\OBJ\can.crf" --depend "..\OBJ\can.d" "code\driver\can\src\can.c"

@@ -1,0 +1,34 @@
+{
+	"build_systems":
+	[
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Anaconda Python Builder",
+			"selector": "source.python",
+			"shell_cmd": "\"python\" -u \"$file\""
+		}
+	],
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+	"settings":
+	{
+		"sublimeclang_options":
+		[
+			"-DSTM32F10X_HD",
+			"-DRADAR",
+			"-DGPS_ENABLE",
+			"-I/home/obsidian/virtualbox/xp/code/keil/handle_radar/HARDWARE/LED",
+			"-I/home/obsidian/virtualbox/xp/code/keil/handle_radar/SYSTEM/delay",
+			"-I/home/obsidian/virtualbox/xp/code/keil/handle_radar/SYSTEM/sys",
+			"-I/home/obsidian/virtualbox/xp/code/keil/handle_radar/SYSTEM/usart",
+			"-I/home/obsidian/virtualbox/xp/code/keil/handle_radar/USER",
+			"-I/home/obsidian/virtualbox/xp/code/keil/handle_radar/USER/code",
+			"-I/home/obsidian/virtualbox/xp/code/keil/handle_radar/STM32F10x_FWLib/inc",
+			"-I/home/obsidian/virtualbox/xp/code/keil/handle_radar/CORE"
+		]
+	}
+}

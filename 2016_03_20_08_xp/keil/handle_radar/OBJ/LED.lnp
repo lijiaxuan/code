@@ -1,0 +1,5 @@
+--cpu Cortex-M3 "..\obj\main.o" "..\obj\radar.o" "..\obj\radar_global.o" "..\obj\steer.o" "..\obj\steer_global.o" "..\obj\infrared_global.o" "..\obj\infrared.o" "..\obj\bluetooth.o" "..\obj\bluetooth_global.o" "..\obj\stm32f10x_usart.o" "..\obj\stm32f10x_gpio.o" "..\obj\stm32f10x_rcc.o" "..\obj\misc.o" "..\obj\delay.o" "..\obj\can.o" "..\obj\stm32f10x_tim.o" "..\obj\stm32f10x_adc.o" "..\obj\stm32f10x_dma.o" "..\obj\system_stm32f10x.o" "..\obj\stm32f10x_it.o" "..\obj\startup_stm32f10x_hd.o" "..\obj\stm32f10x_can.o" 
+--strict --scatter "..\OBJ\LED.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\LED.map" -o ..\OBJ\LED.axf

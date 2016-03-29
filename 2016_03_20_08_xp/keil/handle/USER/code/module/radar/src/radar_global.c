@@ -1,0 +1,25 @@
+/* 
+* @Author: obsidian
+* @Date:   2016-01-16 14:57:29
+* @Last Modified by:   obsidian
+* @Last Modified time: 2016-01-22 10:03:54
+*/
+#include "../inc/radar_global.h"
+#include "../inc/radar.h"
+#include "stm32f10x.h"
+struct Radar_commands radar_command = 
+{
+	{0x47,0x53,0x30,0x32,0x31,0x33,0x30,0x35,0x35,0x35,0x30,0x31,0x0d,0x0a},
+	{0x42,0x4d,0x0d,0x0a},
+	{0x51,0x54,0x0d,0x0a,0x0d}
+};
+struct Radar radar = 
+{
+	USART3,
+	radar_init,
+	update,
+	send_qt,
+	send_bm,
+	send_gs,
+	0
+};

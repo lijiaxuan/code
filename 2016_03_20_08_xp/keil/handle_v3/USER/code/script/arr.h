@@ -1,0 +1,1 @@
+extern signed short arr[80][60];

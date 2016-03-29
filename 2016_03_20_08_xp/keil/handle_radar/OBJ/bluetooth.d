@@ -1,0 +1,15 @@
+..\OBJ\bluetooth.o: code\module\bluetooth\src\bluetooth.c
+..\OBJ\bluetooth.o: code\module\bluetooth\src\../inc/bluetooth.h
+..\OBJ\bluetooth.o: code\module\bluetooth\src\../inc/bluetooth_global.h
+..\OBJ\bluetooth.o: code\module\bluetooth\src\../inc/bluetooth_struct.h
+..\OBJ\bluetooth.o: ..\STM32F10x_FWLib\inc\stm32f10x_usart.h
+..\OBJ\bluetooth.o: ..\USER\stm32f10x.h
+..\OBJ\bluetooth.o: ..\CORE\core_cm3.h
+..\OBJ\bluetooth.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+..\OBJ\bluetooth.o: ..\USER\system_stm32f10x.h
+..\OBJ\bluetooth.o: ..\USER\stm32f10x_conf.h
+..\OBJ\bluetooth.o: ..\STM32F10x_FWLib\inc\stm32f10x_gpio.h
+..\OBJ\bluetooth.o: ..\USER\stm32f10x.h
+..\OBJ\bluetooth.o: ..\STM32F10x_FWLib\inc\stm32f10x_rcc.h
+..\OBJ\bluetooth.o: ..\STM32F10x_FWLib\inc\stm32f10x_usart.h
+..\OBJ\bluetooth.o: ..\STM32F10x_FWLib\inc\misc.h

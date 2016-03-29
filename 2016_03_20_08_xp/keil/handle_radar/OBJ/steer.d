@@ -1,0 +1,15 @@
+..\OBJ\steer.o: code\module\steer\src\steer.c
+..\OBJ\steer.o: code\module\steer\src\../inc/steer.h
+..\OBJ\steer.o: code\module\steer\src\../inc/steer_struct.h
+..\OBJ\steer.o: ..\STM32F10x_FWLib\inc\stm32f10x_tim.h
+..\OBJ\steer.o: ..\USER\stm32f10x.h
+..\OBJ\steer.o: ..\CORE\core_cm3.h
+..\OBJ\steer.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+..\OBJ\steer.o: ..\USER\system_stm32f10x.h
+..\OBJ\steer.o: ..\USER\stm32f10x_conf.h
+..\OBJ\steer.o: ..\STM32F10x_FWLib\inc\stm32f10x_gpio.h
+..\OBJ\steer.o: ..\USER\stm32f10x.h
+..\OBJ\steer.o: ..\STM32F10x_FWLib\inc\stm32f10x_rcc.h
+..\OBJ\steer.o: ..\STM32F10x_FWLib\inc\stm32f10x_usart.h
+..\OBJ\steer.o: ..\STM32F10x_FWLib\inc\misc.h
+..\OBJ\steer.o: code\module\steer\src\../inc/steer_global.h

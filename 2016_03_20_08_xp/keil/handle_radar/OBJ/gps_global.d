@@ -1,0 +1,16 @@
+..\OBJ\gps_global.o: code\module\GPS\src\GPS_global.c
+..\OBJ\gps_global.o: code\module\GPS\src\../inc/GPS_global.h
+..\OBJ\gps_global.o: code\module\GPS\src\../inc/GPS_struct.h
+..\OBJ\gps_global.o: ..\STM32F10x_FWLib\inc\stm32f10x_tim.h
+..\OBJ\gps_global.o: ..\USER\stm32f10x.h
+..\OBJ\gps_global.o: ..\CORE\core_cm3.h
+..\OBJ\gps_global.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+..\OBJ\gps_global.o: ..\USER\system_stm32f10x.h
+..\OBJ\gps_global.o: ..\USER\stm32f10x_conf.h
+..\OBJ\gps_global.o: ..\STM32F10x_FWLib\inc\stm32f10x_gpio.h
+..\OBJ\gps_global.o: ..\USER\stm32f10x.h
+..\OBJ\gps_global.o: ..\STM32F10x_FWLib\inc\stm32f10x_rcc.h
+..\OBJ\gps_global.o: ..\STM32F10x_FWLib\inc\stm32f10x_usart.h
+..\OBJ\gps_global.o: ..\STM32F10x_FWLib\inc\misc.h
+..\OBJ\gps_global.o: E:\code\keil\handle_v3\USER\code\module/def.h
+..\OBJ\gps_global.o: code\module\GPS\src\../inc/GPS.h
